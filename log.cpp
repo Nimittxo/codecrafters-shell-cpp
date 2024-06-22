@@ -21,3 +21,23 @@ public:
 private:
     std::ofstream logFile;
 };
+class Debug : public Logger {
+public:
+    Debug(const std::string &filename) : Logger(filename) {}
+
+    void debug(const std::string &message) {
+        log("DEBUG: " + message);
+    }
+
+    void info(const std::string &message) {
+        log("INFO: " + message);
+    }
+
+    void warn(const std::string &message) {
+        log("WARN: " + message);
+    }
+
+    void error(const std::string &message) {
+        log("ERROR: " + message);
+    }
+};
